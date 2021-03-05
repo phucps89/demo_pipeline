@@ -7,9 +7,9 @@ node {
     stage('Example') {
         sshagent (credentials: ['ssh-logisoft']) {
             sh '''
-                $SSH_INFO << EOF
-                    docker ps -a
-                EOF
+                $SSH_INFO "
+                docker ps -a
+                "
             '''
         }
     }
