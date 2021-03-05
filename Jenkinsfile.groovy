@@ -1,3 +1,5 @@
+@NonCPS
+
 pipeline {
     agent any 
     options {
