@@ -20,9 +20,9 @@ pipeline {
                             cd lts_live/wms360/backend
                             git pull
                             cd ${CW_LARADOCK_DIR}
-                            docker-compose exec -u laradock -w /var/www/lts_live/wms360/backend workspace bash -c "composer install"
-                            docker-compose exec php-swoole supervisorctl restart swoole-lts-live
-                            docker-compose exec php-worker supervisorctl restart worker-lts-live:
+                            docker-compose exec -T -u laradock -w /var/www/lts_live/wms360/backend workspace bash -c "composer install"
+                            docker-compose exec -T php-swoole supervisorctl restart swoole-lts-live
+                            docker-compose exec -T php-worker supervisorctl restart worker-lts-live:
                         "
                     """
                 }
