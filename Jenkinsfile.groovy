@@ -2,10 +2,6 @@ def COLOR_MAP = ['SUCCESS': 'good', 'FAILURE': 'danger', 'UNSTABLE': 'danger', '
 
 pipeline {
     agent any 
-    options {
-        ansiColor('xterm')
-        disableConcurrentBuilds()
-    }
 
     environment {
         SSH_INFO="logisoft@14.225.5.109"
