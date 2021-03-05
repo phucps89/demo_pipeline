@@ -13,12 +13,14 @@ pipeline {
 
     stages {
         stage('Example') {
-            sshagent (credentials: ['ssh-logisoft']) {
-                sh """
-                    ssh -o StrictHostKeyChecking=no -vv ${SSH_INFO} "
-                        docker ps -a
-                    "
-                """
+            steps {
+                sshagent (credentials: ['ssh-logisoft']) {
+                    sh """
+                        ssh -o StrictHostKeyChecking=no -vv ${SSH_INFO} "
+                            docker ps -a
+                        "
+                    """
+                }
             }
         }
     }
