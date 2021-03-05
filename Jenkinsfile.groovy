@@ -9,7 +9,6 @@ node {
             sh '''
                 ${SSH_INFO} << EOF
                 docker ps -a
-                exit
                 EOF
             '''
         }
