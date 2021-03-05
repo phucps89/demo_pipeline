@@ -7,7 +7,9 @@ node {
     stage('Example') {
         sshagent (credentials: ['ssh-logisoft']) {
             sh '''
-                ssh -o StrictHostKeyChecking=no -vv $SSH_INFO "docker ps -a"
+                ssh -o StrictHostKeyChecking=no -vv $SSH_INFO "
+                docker ps -a
+                "
             '''
         }
     }
