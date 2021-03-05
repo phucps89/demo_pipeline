@@ -1,7 +1,7 @@
 node {
 
     environment {
-        SSH_INFO="ssh -o StrictHostKeyChecking=no -l logisoft 14.225.5.109 uname -a"
+        SSH_INFO="ssh -o StrictHostKeyChecking=no -tt logisoft 14.225.5.109"
     }
 
     stage('Example') {
