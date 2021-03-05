@@ -7,7 +7,7 @@ node {
     stage('Example') {
         sshagent (credentials: ['ssh-logisoft']) {
             sh '''
-                $SSH_INFO echo testing connection || true
+                $SSH_INFO docker ps -a || true
                 ssh-add -L
                 echo done running remote windows test
             '''
