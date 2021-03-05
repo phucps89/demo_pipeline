@@ -14,7 +14,7 @@ pipeline {
             steps {
                 sshagent (credentials: ['ssh-logisoft']) {
                     sh """
-                        ssh -o StrictHostKeyChecking=no -vv ${SSH_INFO} "
+                        ssh -o StrictHostKeyChecking=no ${SSH_INFO} "
                         docker ps -a
                             cd ${CW_DIR}
                             cd lts_live/wms360/backend
