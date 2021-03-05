@@ -9,7 +9,7 @@ node {
             sh '''
                 $SSH_INFO docker ps -a || true
                 ssh-add -L
-                echo done running remote windows test
+                docker ps -a
             '''
         }
     }
